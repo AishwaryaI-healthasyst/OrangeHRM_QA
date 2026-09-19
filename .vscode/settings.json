@@ -1,0 +1,5 @@
+{
+    "inlineChat.affordance": "editor",
+    "inlineChat.notebookAgent": true,
+    "inlineChat.defaultModel": "Auto (copilot)"
+}

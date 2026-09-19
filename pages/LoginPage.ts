@@ -4,12 +4,16 @@ export class LoginPage {
   private readonly username: Locator;
   private readonly password: Locator;
   private readonly loginButton: Locator;
+  private readonly adminLink: Locator;
+  readonly adminHeading: Locator;
  
  
   constructor(private readonly page: Page) {
     this.username = page.locator('input[placeholder="Username"]');
     this.password = page.locator('input[placeholder="Password"]');
     this.loginButton = page.getByRole('button', { name: 'Login' });  
+    this.adminLink = page.getByRole('link', { name: 'Admin' });
+    this.adminHeading = page.getByRole('heading', { name: 'Admin' });
   }
  
   async open(): Promise<void> {
@@ -22,6 +26,11 @@ export class LoginPage {
     await this.username.fill(username);
     await this.password.fill(password);
     await this.loginButton.click();
+    
+  }
+
+  async navigateToAdmin(): Promise<void> {
+    await this.adminLink.click();
   }
  
 }

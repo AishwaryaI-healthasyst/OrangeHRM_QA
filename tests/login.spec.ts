@@ -11,9 +11,10 @@ test('OrangeHRM login test',async({page})=>{
     await loginPage.open();
     await loginPage.login(username,password);
     await expect(page).toHaveURL(/dashboard/);
- 
- 
 
+    await loginPage.navigateToAdmin();
+    await expect(loginPage.adminHeading).toBeVisible();
+    
 
  
 });
