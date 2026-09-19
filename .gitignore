@@ -8,6 +8,6 @@ node_modules/
 /playwright/.auth/
 /.env
 /.vscode
-/allure-history
-/allure-reports
-/allure-results
+/allure-history/
+/allure-reports/
+/allure-results/
